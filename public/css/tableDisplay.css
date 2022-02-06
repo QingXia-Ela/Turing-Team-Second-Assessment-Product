@@ -1,0 +1,197 @@
+/* 此处存放所有工作台样式 */
+
+#welcome_page {
+    flex: 2;
+    display: flex;
+    padding-bottom: .2rem;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#welcome_page h2 , #welcome_page h3 {
+    margin: 0;
+}
+
+#welcome_page p{
+    color: rgba(0, 0, 0, 0.7);
+    font-size: .48rem;
+    margin-bottom: 0;
+}
+
+#welcome_page p span {
+    color: #000;
+}
+
+.img_box {
+    position: relative;
+}
+
+.img_box img{
+    width: 100%;
+}
+
+.mini_show_task {
+    text-align: center;
+}
+
+/* 列表样式 */
+
+/* 结构如下:
+<li class="box_shadow">
+    <span class="list_date">2022-10-13</span>
+    <p>114514</p>
+    <i class="glyphicon glyphicon-trash"></i>  // <input type="checkbox">
+</li> */
+
+.small_list {
+    flex: 1;
+    padding: 0;
+    /* overflow-x: hidden; */
+    overflow-y: auto;
+}
+
+.small_list li {
+    position: relative;
+    margin: .1rem 0;
+    padding: 0 .2rem;
+    background-color: #f3f3f3;
+    cursor: pointer;
+}
+
+.small_list i , .small_list input {
+    position: absolute;
+    top: 50%;
+    right: .2rem;
+    font-size: .4rem;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.small_list input {
+    width: .4rem;
+    height: .4rem;
+    margin-top: 0;
+}
+
+.small_list p {
+    display: flex;
+    /* justify-content: space-around; */
+    font-size: .35rem;
+}
+
+.small_list p>span {
+    flex: 2;
+}
+
+#bigList, #details {
+    display: flex;
+    flex: 1;
+    flex-flow: column wrap;
+}
+
+.big_list_status {
+    display: flex;
+    flex: 1;
+    flex-flow: column wrap;
+}
+
+.big_list_status>div {
+    display: flex;
+    flex: 2;
+    flex-flow: column wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.big_list_status span {
+    font-size: .5rem;
+}
+
+.big_list_status div:first-child span{
+    color: rgb(65, 190, 40);
+}
+
+.big_list_status div:last-child span{
+    color: rgb(235, 53, 47);
+}
+
+.big_list_status p{
+    display: block;
+    font-size: .36rem;
+}
+
+
+/* 详情页 */
+
+#details {
+    text-align: center;
+}
+
+#details>h2 {
+    position: relative;
+}
+
+.back_to_list {
+    position: absolute;
+    top: 50%;
+    left: .2rem;
+    color: rgb(45, 192, 236);
+    font-size: .36rem;
+    font-style: normal;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+/* 修改按钮 */
+
+/* #details>h2::after {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    color: rgb(45, 192, 236);
+    font-size: .36rem;
+    content: '修改';
+    cursor: pointer;
+    transform: translateY(-50%);
+} */
+
+#detailsDate {
+    margin-top: .2rem;
+    font-size: .4rem;
+}
+
+#moneyDetails {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+}
+
+#moneyDetails .row{
+    font-size: .36rem;
+}
+
+#moneyDetails>.row>div:first-child {
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+#moneyInfo {
+    flex: 1;
+    margin-top: .2rem;
+    font-size: .4rem;
+    color: rgb(56, 56, 56);
+    text-align: left;
+}
+
+#toDoDetails {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+#toDoDetails {
+    font-size: .4rem;
+}
+
+#toDoDetails div span {
+    color: rgb(65, 190, 40);
+}

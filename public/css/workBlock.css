@@ -1,0 +1,29 @@
+.work_block {
+    display: flex;
+    position: relative;
+    margin: 10px 0;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    transition: all .2s;
+    /* justify-content: left; */
+    justify-content: space-between;
+    flex-flow: column wrap;
+    /* overflow: hidden; */
+}
+
+.work_block:hover {
+    transform: translateY(-5px);
+}
+
+.work_block>h4 {
+    width: 100%;
+    /* padding: 0 15px; */
+    text-align: center;
+    cursor: pointer;
+    /* box-sizing: content-box; */
+}
+
+.table_display {
+    opacity: 1;
+    transition: all .2s;
+}

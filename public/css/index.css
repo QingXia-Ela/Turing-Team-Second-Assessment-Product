@@ -1,0 +1,155 @@
+html {
+    color: #000;
+    font-family: 'Microsoft YaHei';
+    font-size: 50px;
+}
+
+body {
+    flex-flow: column wrap;
+}
+
+a, a:hover ,a:visited, a:checked { color: #000; text-decoration: none !important; font-style: none; }
+
+
+ul, ol {
+    list-style: none;
+}
+
+.box_shadow {
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.3);
+}
+
+.red {
+    color: rgb(235, 53, 47);
+}
+
+.green {
+    color: rgb(65, 190, 40);
+}
+
+input, textarea {
+    outline: none;
+}
+
+h2 {
+    position: relative;
+    text-align: center;
+}
+
+textarea {
+    resize: none;
+}
+
+label {
+    margin: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+select {
+    width: 1.4rem;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    outline: 0;
+    vertical-align: middle;
+}
+
+
+
+#bg {
+    z-index: -10;
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: no-repeat center/100%  url(../images/bg.png);
+    background-size: cover;
+}
+
+#bg img {
+    width: 100%;
+}
+
+header, footer {
+    width: 100%;
+    /* height: 63px; */
+    color: #000;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+header .row {
+    display: flex;
+    align-items: center;
+}
+
+header h2 {
+    margin: 15px;
+}
+
+header i::before {
+    font-size: .5rem;
+    vertical-align: bottom;
+    cursor: pointer;
+}
+
+.work_table {
+    display: block;
+    min-height: 600px;
+    max-height: 960px;
+    height: 100%;
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+
+.table_aside , .table_mid {
+    height: 100%;
+}
+
+.table_aside {
+    z-index: 1;
+}
+
+.table_aside>div {
+    height: 45%;
+}
+
+.table_mid>div {
+    margin: 20px 0;
+    height: 90%;
+}
+
+#hitokoto_text {
+    text-align: center;
+    /* position: absolute;
+    bottom: .2rem; */
+    /* margin-top: .2rem; */
+    font-size: .4rem;
+}
+
+#bookKeeping, #toDoList {
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+footer {
+    z-index: 10;
+    position: fixed;
+    bottom: 0;
+    height: 40px;
+}
