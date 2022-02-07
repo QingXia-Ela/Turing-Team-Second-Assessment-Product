@@ -58,8 +58,20 @@ function getLocalData() {
         })
     }
     else {
-        moneyData = JSON.parse(localStorage.getItem("money"));
-        eventData = JSON.parse(localStorage.getItem("event"));
+        // 本地存储
+        // moneyData = JSON.parse(localStorage.getItem("money"));
+        // eventData = JSON.parse(localStorage.getItem("event"));
+
+        // node 请求
+        $.get('http://127.0.0.1/content', function (res) {
+            if (res.status !== 200) {
+                alert('获取数据失败! 错误码:' + res.status);
+            }
+            moneyData = res.moneyData;
+            eventData = res.eventData;
+        })
+
+        // 保险代码
         if (moneyData == null) moneyData = [];
         if (eventData == null) eventData = [];
     }
@@ -139,8 +151,25 @@ function saveLocalData(data, classChoose) {
         $('textarea').val("");
     }
 
-    localStorage.setItem("event", JSON.stringify(eventData));
-    localStorage.setItem("money", JSON.stringify(moneyData));
+    // 本地存储
+    // localStorage.setItem("event", JSON.stringify(eventData));
+    // localStorage.setItem("money", JSON.stringify(moneyData));
+
+    // node 后端对接
+    console.log(moneyData);
+    $.post('http://127.0.0.1/api/moneyBooking', moneyData, function (res) {
+        console.log(res);
+        if (res.status !== 201) {
+            alert('提交失败! 错误码:' + res.status);
+        }
+    })
+    $.post('http://127.0.0.1/api/eventBooking', eventData, function (res) {
+        console.log(res);
+        if (res.status !== 201) {
+            alert('提交失败! 错误码:' + res.status);
+        }
+    })
+
     // 提交后显示
     getLocalData();
     // 为列表点击添加事件
@@ -166,7 +195,6 @@ function searchData(classChoose, tyear, tmonth, tday) {
             for (var i = 0; i < moneyData.length; i++) {
                 if (parseInt(moneyData[i].day) == tday && parseInt(moneyData[i].month) == tmonth && parseInt(moneyData[i].year) == tyear) res.push(moneyData[i])
             }
-
             break;
         // eventData查询
         case 1:
