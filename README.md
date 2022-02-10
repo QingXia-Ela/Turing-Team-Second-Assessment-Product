@@ -18,7 +18,7 @@ npm i mysql
 const db = mysql.createPool({
   host: '127.0.0.1',
   port: 3306,
-  user: 'root',
+  user: '',
   password: '',
   database: 'notedata'
 })
@@ -28,12 +28,14 @@ const db = mysql.createPool({
 
 记账结构：
 
+database名字：moneydata
 | id   | year | month | day  | moneySpend    | moneyGet      | moneyInfo |
 | ---- | ---- | ----- | ---- | ------------- | ------------- | --------- |
 | INT  | INT  | INT   | INT  | DECIMAL(10,2) | DECIMAL(10,2) | CHAR(200) |
 
 记事结构：
 
+database名字：eventdata
 | id   | year | month | day  | eventTitle | eventInfo | eventFinish |
 | ---- | ---- | ----- | ---- | ---------- | --------- | ----------- |
 | INT  | INT  | INT   | INT  | CHAR(200)  | CHAR(200) | TINYINT     |
