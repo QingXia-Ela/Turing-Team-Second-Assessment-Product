@@ -1,7 +1,7 @@
 # Turing-Team-Second-Assessment-Product
 图灵团队二轮考核作品
 
-这里是对接了 MySQL 的成品
+这里是对接了 MySQL 和登陆页面的成品
 
 **node 环境**
 
@@ -11,7 +11,7 @@ npm install
 
 有关配置都在 data / config 下面
 
-```json
+```js
 {
     "port": 80, // 服务器启动端口
     "secretKey": "Shiinafan", // cookie加密字符串
