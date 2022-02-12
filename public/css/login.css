@@ -1,0 +1,160 @@
+html {
+    color: #000;
+    font-family: 'Microsoft YaHei';
+    font-size: 50px;
+}
+
+body {
+    flex-flow: column wrap;
+}
+
+a, a:hover ,a:visited, a:checked { color: #000; text-decoration: none !important; font-style: none; }
+
+
+ul, ol {
+    list-style: none;
+}
+
+.box_shadow {
+    box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.3);
+}
+
+.red {
+    color: rgb(235, 53, 47);
+}
+
+.green {
+    color: rgb(65, 190, 40);
+}
+
+input, textarea {
+    outline: none;
+}
+
+h2 {
+    position: relative;
+    text-align: center;
+}
+
+textarea {
+    resize: none;
+}
+
+label {
+    margin: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+select {
+    width: 1.4rem;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    outline: 0;
+    vertical-align: middle;
+}
+
+#bg {
+    z-index: -10;
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: no-repeat center/100%  url(../images/login/bg.png);
+    background-size: cover;
+}
+
+.main_container {
+    width: 100%;
+    height: 100%;
+    min-height: 800px;
+    position: absolute;
+}
+
+.main_login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 700px;
+    background-color: #fff;
+    border-radius: 20px;
+    transform: translate(-50%,-50%);
+}
+
+.mascot {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.mascot img{
+    width: 100%;
+}
+
+.login_box {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    color: #32b0ff;
+    transform: translateY(-5%);
+}
+
+.login_box h2{
+    padding-bottom: 20px;
+} 
+
+.submit_form {
+    width: 60%;
+}
+
+.submit_form h5 {
+    text-align: center;
+}
+
+.submit_form input {
+    width: 100%;
+    margin: 5px 0;
+    font-size: 20px;
+    color: #000;
+    border: none;
+    border-bottom: 1px solid #79aef4;
+}
+
+#submitInfo{
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: none;
+    background: linear-gradient(-45deg,#54f5f7, #3ca7ff, #54f5f7, #3ca7ff);
+    background-size: 200% 200%;
+    color: #fff;
+    margin-top: 20px;
+    border-radius: 20px;
+    transition: background-position .3s;
+}
+
+#submitInfo:hover {
+        background-position: 60% 60%;
+}
+
+footer {
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 90%;
+    color: #fff;
+    text-align: center;
+    transform: translateX(-50%);
+}

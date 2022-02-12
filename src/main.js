@@ -3,7 +3,7 @@ const path = require('path');
 
 const express = require('express');
 const mysql = require('mysql');
-// const { urlencoded } = require('body-parser');
+const cors = require('cors');
 
 const router = express.Router();
 const db = mysql.createPool({
@@ -19,10 +19,6 @@ const eventSql = "notedata.eventData";
 
 // 主页模块
 router.use(express.static(path.join(__dirname, '../public')));
-
-// json转换
-router.use(express.json());
-router.use(express.urlencoded({ extended: false }));
 
 // mysql链接自检
 router.use((req, res, next) => {
