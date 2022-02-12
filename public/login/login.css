@@ -69,7 +69,7 @@ select {
     bottom: 0;
     left: 0;
     right: 0;
-    background: no-repeat center/100%  url(../images/login/bg.png);
+    background: no-repeat center/100%  url(images/bg.png);
     background-size: cover;
 }
 
@@ -127,6 +127,7 @@ select {
     margin: 5px 0;
     font-size: 20px;
     color: #000;
+    text-align: center;
     border: none;
     border-bottom: 1px solid #79aef4;
 }

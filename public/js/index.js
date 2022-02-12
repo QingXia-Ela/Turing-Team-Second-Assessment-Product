@@ -1,8 +1,5 @@
 var beginDay = "2022-1-26"
 
-// 暂时还没找到浏览器运行 nodejs 的方法
-// const fs = require('fs');
-// const path = require('path');
 const fs = null;
 
 // 判断选择类型
@@ -44,32 +41,18 @@ var moneyData = [];
 var eventData = [];
 
 function getLocalData() {
-  // nodejs环境检测
-  if (fs) {
-    fs.readFile(path.join(__dirname, '../../', './data/moneyData.txt'), function (err, data) {
-      if (err) return alert('读取本地数据失败 ' + err.message);
-      if (moneyData == '') moneyData = [];
-      else moneyData = JSON.parse(encodeURI(data));
-    })
-    fs.readFile(path.join(__dirname, '../../', './data/eventData.txt'), function (err, data) {
-      if (err) return alert('读取本地数据失败 ' + err.message);
-      if (eventData == '') eventData = [];
-      else eventData = JSON.parse(encodeURI(data));
-    })
-  }
-  else {
-    // mysql 请求
-    $.get('http://127.0.0.1/content', function (res) {
-      if (res.status !== 200) {
-        alert('mysql 连接失败!');
-      } else {
-        moneyData = res.moneyData;
-        eventData = res.eventData;
-      }
-      showLocalData();
-      addShowDetails();
-    })
-  }
+  $.get('http://127.0.0.1/content', function (res) {
+    if (res.status !== 200) {
+      // 登陆判断
+      alert('暂未登陆，即将跳转到登录页');
+      window.location.replace('http://127.0.0.1/login');
+    } else {
+      moneyData = res.moneyData;
+      eventData = res.eventData;
+    }
+    showLocalData();
+    addShowDetails();
+  })
 }
 
 // 字符转换

@@ -3,7 +3,9 @@ const path = require('path');
 
 const express = require('express');
 const mysql = require('mysql');
-const cors = require('cors');
+const session = require('express-session');
+
+const cookie = require('cookie-parser');
 
 const router = express.Router();
 const db = mysql.createPool({
@@ -17,6 +19,9 @@ const db = mysql.createPool({
 const moneySql = "notedata.moneyData";
 const eventSql = "notedata.eventData";
 
+// 配置读取
+const config = require('../data/config.json')
+
 // 主页模块
 router.use(express.static(path.join(__dirname, '../public')));
 
@@ -27,6 +32,20 @@ router.use((req, res, next) => {
     else next();
   })
 })
+
+// cookie配置
+// router.use(cookie())
+
+// 检测是否登陆模块
+const islogin = (req, res, next) => {
+  if (!req.session.islogin) {
+    res.send({
+      status: 401,
+      message: "token无效或无法读取token"
+    })
+  }
+  else next()
+}
 
 // 全局对象
 let moneyData = [];
@@ -54,12 +73,12 @@ const readData = (req, res, next) => {
 }
 
 // 获取数据端口
-router.get('/content', readData, function (req, res) {
+router.get('/content', islogin, readData, function (req, res) {
   res.send({ moneyData, eventData, status: 200 });
 })
 
 // 接受数据接口
-router.post('/api/:classChoose', (req, res) => {
+router.post('/api/:classChoose', islogin, (req, res) => {
 
   let content = req.body;
   content = JSON.stringify(content);
@@ -91,7 +110,7 @@ router.post('/api/:classChoose', (req, res) => {
 })
 
 // 删除数据接口
-router.get('/delete', (req, res) => {
+router.get('/delete', islogin, (req, res) => {
   let classChoose = req.query.classChoose;
   let deleteID = parseInt(req.query.deleteID);
   if (classChoose === "eventShowArea") {
